@@ -9,6 +9,15 @@ set background=dark
 colorscheme molokai
 syntax on
 
+" Remap leader
+let mapleader = ","
+
+" Strip trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Smart matching
+runtime macros/matchit.vim
+
 " Remove vi compadibility
 set nocompatible
 
