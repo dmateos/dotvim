@@ -7,3 +7,6 @@
 [submodule "bundle/cmd-t"]
 	path = bundle/cmd-t
 	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/checksyntax"]
+	path = bundle/checksyntax
+	url = https://github.com/tomtom/checksyntax_vim

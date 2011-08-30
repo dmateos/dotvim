@@ -112,3 +112,10 @@ set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " NERDTree
 nmap <silent> <leader>n :NERDTreeToggle<CR>
+
+" checksyntax: auto-check Ruby files on save.
+if !exists('g:checksyntax')
+	let g:checksyntax = {}
+	let g:checksyntax['ruby'] = {'auto': 1, 'prepare': 'compiler ruby', 'cmd': 'ruby -c', 'okrx': 'Syntax OK\|No Errors'}
+	let g:checksyntax['c'] = {'auto': 1, 'cmd': 'splint'}
+endif
