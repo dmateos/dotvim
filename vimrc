@@ -16,7 +16,7 @@ set nocompatible
 set number
 
 " Tabs etc
-set tabstop=2 shiftwidth=2
+set tabstop=4 shiftwidth=4
 set smartindent
 
 " Ruby specific tabs
