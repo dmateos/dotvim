@@ -7,6 +7,7 @@ filetype plugin indent on
 " Colors
 set background=dark
 colorscheme molokai
+syntax on
 
 " Remove vi compadibility
 set nocompatible
@@ -108,3 +109,6 @@ set hlsearch
 " PLUGINS
 " fugitive
 set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" NERDTree
+nmap <silent> <leader>n :NERDTreeToggle<CR>
