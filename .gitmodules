@@ -13,3 +13,12 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/ctrip"]
+	path = bundle/ctrip
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundles/tagbar"]
+	path = bundles/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar

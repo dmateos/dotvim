@@ -137,4 +137,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " Command T to my custo leader key needed for some reason.
-nmap <leader>t : CommandT<CR>
+nmap <leader>t :CommandT<CR>
+
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_width=26
+nmap <leader>c :TagbarToggle<CR>
