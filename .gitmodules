@@ -22,3 +22,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule "bundle/gnupg"]
+	path = bundle/gnupg
+	url = http://github.com/vim-scripts/gnupg.vim
