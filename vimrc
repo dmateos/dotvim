@@ -115,6 +115,10 @@ set incsearch
 set showmatch
 set hlsearch
 
+set mouse=a
+
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
 " PLUGINS
 " fugitive
 set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P

@@ -19,9 +19,12 @@
 [submodule "bundles/tagbar"]
 	path = bundles/tagbar
 	url = git://github.com/majutsushi/tagbar
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = git://github.com/majutsushi/tagbar
 [submodule "bundle/gnupg"]
 	path = bundle/gnupg
 	url = http://github.com/vim-scripts/gnupg.vim
+[submodule "bundle/autoclose"]
+	path = bundle/autoclose
+	url = https://github.com/Townk/vim-autoclose
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
