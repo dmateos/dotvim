@@ -1,3 +1,5 @@
+set backspace=2
+
 " Pathogen: manage plugins in separate directories by manipulating runtimepath.
 filetype on
 filetype off
@@ -6,7 +8,7 @@ filetype plugin indent on
 
 " Colors
 set background=dark
-colorscheme molokai
+colorscheme jellybeans_pda
 syntax on
 
 " Remap leader
@@ -116,6 +118,8 @@ set showmatch
 set hlsearch
 
 set mouse=a
+set ttymouse=xterm2
+
 
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -146,3 +150,9 @@ nmap <leader>t :CommandT<CR>
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 let g:tagbar_width=26
 nmap <leader>c :TagbarToggle<CR>
+
+let g:Powerline_symbols = 'fancy'
+
+set clipboard=unnamed
+
+let g:CommandTMaxHeight = 16
