@@ -7,7 +7,6 @@ call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 " Colors
-set background=dark
 colorscheme jellybeans_pda
 syntax on
 
@@ -119,7 +118,6 @@ set hlsearch
 
 set mouse=a
 set ttymouse=xterm2
-
 
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
