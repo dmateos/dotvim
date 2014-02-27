@@ -6,6 +6,8 @@ and a [useful set of plugins][gitmodules] managed by [pathogen][pathogen].
 
 Adapted from my friend PDA's config
 
+<img src="https://raw.github.com/dmateos/dotvim/master/vim.png" />
+
 ```
 # backup what you've got
 mv .vim .vim-backup
