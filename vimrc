@@ -26,7 +26,7 @@ set nocompatible
 set number
 
 " Tabs etc
-set tabstop=4 shiftwidth=4
+set tabstop=2 shiftwidth=2
 set smartindent
 
 " Ruby specific tabs
@@ -132,7 +132,6 @@ nmap <silent> <leader>n :NERDTreeToggle<CR>
 if !exists('g:checksyntax')
 	let g:checksyntax = {}
 	let g:checksyntax['ruby'] = {'auto': 1, 'prepare': 'compiler ruby', 'cmd': 'ruby -c', 'okrx': 'Syntax OK\|No Errors'}
-	let g:checksyntax['c'] = {'auto': 1, 'cmd': 'splint'}
 endif
 
 " SuperTab ruby support
@@ -151,6 +150,8 @@ nmap <leader>c :TagbarToggle<CR>
 
 let g:Powerline_symbols = 'fancy'
 
-set clipboard=unnamed
+if $TMUX == ''
+	    set clipboard+=unnamed
+endif
 
 let g:CommandTMaxHeight = 16
