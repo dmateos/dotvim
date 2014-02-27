@@ -4,9 +4,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/cmd-t"]
-	path = bundle/cmd-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "bundle/checksyntax"]
 	path = bundle/checksyntax
 	url = https://github.com/tomtom/checksyntax_vim
@@ -16,9 +13,6 @@
 [submodule "bundle/ctrip"]
 	path = bundle/ctrip
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "bundles/tagbar"]
-	path = bundle/tagbar
-	url = git://github.com/majutsushi/tagbar
 [submodule "bundle/gnupg"]
 	path = bundle/gnupg
 	url = http://github.com/vim-scripts/gnupg.vim
@@ -37,3 +31,9 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = https://github.com/tpope/vim-rails
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git

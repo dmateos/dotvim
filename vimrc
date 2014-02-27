@@ -8,22 +8,14 @@ set background=dark
 colorscheme jellybeans_pda
 syntax enable
 
-"set colorcolumn=81
-
-" Remap leader
-let mapleader = ","
-
-" Strip trailing whitespace
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
-" Smart matching
-runtime macros/matchit.vim
-
 " Remove vi compadibility
 set nocompatible
 
 " Show line numbers
 set number
+
+" Smart indenting when starting new line
+set smartindent
 
 " Tabs etc
 set expandtab
@@ -39,12 +31,14 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
-" Make tabs and trailing spaces visible when requested
-set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+" Make tabs and trailing spaces visible when `list` is set.
+set listchars=tab:>-,trail:-
 
 " Needed for multi file editing?
 set hidden
+
+" Smart matching
+runtime macros/matchit.vim
 
 " Navigatable tab completion from Vim command line
 set wildmenu
@@ -73,8 +67,8 @@ set shortmess=atI
 " History
 set history=1000
 
-" Can be hacked
-set modelines=0
+" Default encoding
+set encoding=utf-8
 
 " Show line curser is on
 set cursorline
@@ -82,23 +76,34 @@ set cursorline
 " Fast ttys
 set ttyfast
 
-" Default encoding
-set encoding=utf-8
-
 " Last window status line
 set laststatus=2
 
-set ttyfast
+" Resize split panes with mouse within tmux.
+" Also get live-updated text selection with mouse drag.
+" xterm2: like xterm, plus report position during drag.
+set ttymouse=xterm2
+
+" Mouse for scrolling etc in console.
+" a = normal + visual + insert + command-line + help files
+set mouse=a
+
+" Mapping and escape timeouts.
+set timeout
+set timeoutlen=1000 " mapped sequences
+set ttimeoutlen=10  " escape sequence delay
+
+" PHP whitespace: four space indentation
+autocmd FileType php setlocal sts=4 ts=4 sw=4 expandtab
+
+" Keyboard shortcuts
+"
+" Remap leader
+let mapleader = ","
 
 " Make j & k sane, instead of archaic “movement by file line instead of screen line”
 nnoremap j gj
 nnoremap k gk
-
-" Save on focus loss
-au FocusLost * :wa
-
-" Autload vimrc on save
-autocmd! bufwritepost .vimrc source %
 
 " Unbind the cursor keys in insert, normal and visual modes.
 for prefix in ['n', 'v']
@@ -113,15 +118,8 @@ nmap <Down> <C-W><Down>
 nmap <Left> <C-W><Left>
 nmap <Right> <C-W><Right>
 
-nnoremap / \/v
-vnoremap / \/v
-set gdefault
-set incsearch
-set showmatch
-set hlsearch
-
-set mouse=a
-set ttymouse=xterm2
+" Make tabs and trailing spaces visible when requested
+nmap <silent> <leader>s :set nolist!<CR>
 
 " Strip whitespaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -139,11 +137,19 @@ vnoremap < <gv
 vnoremap > >gv
 
 " PLUGINS
-" fugitive
-set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-
 " NERDTree
 nmap <silent> <leader>n :NERDTreeToggle<CR>
+
+" ctrlp.vim
+let g:ctrlp_max_height = 16
+let g:ctrlp_custom_ignore = ''
+let g:ctrlp_custom_ignore .= '/\..*/\|'
+let g:ctrlp_custom_ignore .= '/tmp/\|'
+let g:ctrlp_custom_ignore .= 'REGEX_TERMINATOR'
+nnoremap <leader>gs :CtrlP spec/<cr>
+nnoremap <leader>gm :CtrlP app/models/<cr>
+nnoremap <leader>gv :CtrlP app/views/<cr>
+nnoremap <leader>gc :CtrlP app/controllers/<cr>
 
 " checksyntax: auto-check Ruby files on save.
 if !exists('g:checksyntax')
@@ -157,17 +163,16 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
-" Command T to my custo leader key needed for some reason.
-nmap <leader>t :CommandT<CR>
-
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 let g:tagbar_width=26
 nmap <leader>c :TagbarToggle<CR>
-
-let g:Powerline_symbols = 'fancy'
 
 if $TMUX == ''
 	    set clipboard+=unnamed
 endif
 
-let g:CommandTMaxHeight = 16
+" Airline
+" " https://github.com/bling/vim-airline
+" " https://github.com/bling/vim-airline/blob/master/doc/airline.txt
+let g:airline_left_sep = '▚'
+let g:airline_right_sep = '▞'
