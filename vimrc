@@ -1,14 +1,14 @@
-set backspace=2
-
 " Pathogen: manage plugins in separate directories by manipulating runtimepath.
-filetype on
-filetype off
-call pathogen#runtime_append_all_bundles()
+runtime bundle/pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 filetype plugin indent on
 
 " Colors
+set background=dark
 colorscheme jellybeans_pda
-syntax on
+syntax enable
+
+"set colorcolumn=81
 
 " Remap leader
 let mapleader = ","
@@ -26,11 +26,13 @@ set nocompatible
 set number
 
 " Tabs etc
-set tabstop=2 shiftwidth=2
-set smartindent
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
-" Ruby specific tabs
-autocmd FileType ruby setlocal sts=2 ts=2 sw=2 et
+" Allow backspacing over indents and start of insertion point.
+set backspace=indent,start
 
 " Highlight trailing whitespace etc
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
@@ -86,6 +88,8 @@ set encoding=utf-8
 " Last window status line
 set laststatus=2
 
+set ttyfast
+
 " Make j & k sane, instead of archaic “movement by file line instead of screen line”
 nnoremap j gj
 nnoremap k gk
@@ -119,7 +123,20 @@ set hlsearch
 set mouse=a
 set ttymouse=xterm2
 
+" Strip whitespaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Split window into 2 and 3
+noremap <leader>3 <C-w>v<C-w>v
+noremap <leader>2 <C-w>v
+map <leader>6 <C-w>v<C-w>v<Right><Right><C-w>s<Left><C-w>s<Left><C-w>s
+
+" Convert to Ruby 1.9 hash syntax
+noremap <leader>9 :s/:\(\S\+\)\s\+=>\s\+/\1: /g<cr>
+
+" Reselect visual block after indent (thanks @twe4ked)
+vnoremap < <gv
+vnoremap > >gv
 
 " PLUGINS
 " fugitive
@@ -135,7 +152,6 @@ if !exists('g:checksyntax')
 endif
 
 " SuperTab ruby support
-"ruby
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
