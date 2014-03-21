@@ -95,6 +95,8 @@ set ttimeoutlen=10  " escape sequence delay
 
 " PHP whitespace: four space indentation
 autocmd FileType php setlocal sts=4 ts=4 sw=4 expandtab
+autocmd BufRead,BufNewFile *.module set filetype=php
+
 
 " Keyboard shortcuts
 "
