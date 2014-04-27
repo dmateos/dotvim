@@ -4,9 +4,12 @@ execute pathogen#infect()
 filetype plugin indent on
 
 " Colors
-set background=dark
-colorscheme jellybeans_pda
+" set background=dark
+" colorscheme jellybeans_pda
+" highlight Normal ctermbg=NONE
+" highlight nonText ctermbg=NONE
 syntax enable
+colorscheme molokai
 
 " Remove vi compadibility
 set nocompatible
@@ -140,7 +143,7 @@ vnoremap > >gv
 
 " PLUGINS
 " NERDTree
-nmap <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <leader>n :NERDTreeTabsToggle<CR>
 
 " ctrlp.vim
 let g:ctrlp_max_height = 16
