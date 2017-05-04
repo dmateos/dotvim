@@ -16,9 +16,6 @@
 [submodule "bundle/gnupg"]
 	path = bundle/gnupg
 	url = http://github.com/vim-scripts/gnupg.vim
-[submodule "bundle/autoclose"]
-	path = bundle/autoclose
-	url = https://github.com/Townk/vim-autoclose
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -61,3 +58,6 @@
 [submodule "bundle/vim-glsl"]
 	path = bundle/vim-glsl
 	url = https://github.com/tikhomirov/vim-glsl
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git

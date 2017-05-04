@@ -85,7 +85,7 @@ set laststatus=2
 " Resize split panes with mouse within tmux.
 " Also get live-updated text selection with mouse drag.
 " xterm2: like xterm, plus report position during drag.
-set ttymouse=xterm2
+set ttymouse=sgr
 
 " Mouse for scrolling etc in console.
 " a = normal + visual + insert + command-line + help files
@@ -151,6 +151,7 @@ let g:ctrlp_custom_ignore = ''
 let g:ctrlp_custom_ignore .= '/\..*/\|'
 let g:ctrlp_custom_ignore .= '/tmp/\|'
 let g:ctrlp_custom_ignore .= 'REGEX_TERMINATOR'
+nnoremap <leader>ga :CtrlP <cr>
 nnoremap <leader>gs :CtrlP spec/<cr>
 nnoremap <leader>gm :CtrlP app/models/<cr>
 nnoremap <leader>gv :CtrlP app/views/<cr>
