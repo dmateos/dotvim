@@ -61,3 +61,6 @@
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "pack/dman/start/vim-python"]
+	path = pack/dman/start/vim-python
+	url = https://github.com/python-mode/python-mode.git
